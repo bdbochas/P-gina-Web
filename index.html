@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coches Deportivos</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Los coches deportivos más impresionantes del mundo</h1>
+
+        <div class="hero-content">
+            <div class="hero-copy">
+                <h2>Velocidad, potencia y adrenalina</h2>
+
+                <p class="intro">
+                    Descubre algunos de los coches deportivos más rápidos y espectaculares
+                    del mundo. Explora sus características y curiosidades.
+                </p>
+            </div>
+
+            <span class="hero-arrow" aria-hidden="true">→</span>
+            <img src="img/deportivos.jpg" alt="Coches deportivos">
+        </div>
+    </header>
+
+    <section class="cars">
+        <h2>Coches destacados</h2>
+
+        <div class="car-grid">
+            <article class="car-item">
+                <h3>Ferrari SF90</h3>
+                <img src="img/ferrari.jpg" alt="Ferrari SF90">
+                <button class="details-button" type="button" aria-expanded="false">
+                    Ver ficha
+                </button>
+                <div class="car-details">
+                    <div class="car-details-inner">
+                        <p>Un deportivo híbrido enchufable que combina un V8 biturbo con tres motores eléctricos.</p>
+                        <ul>
+                            <li><strong>Potencia:</strong> 1.000 CV</li>
+                            <li><strong>0 a 100 km/h:</strong> 2,5 s</li>
+                            <li><strong>Velocidad máxima:</strong> 340 km/h</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="car-item">
+                <h3>Lamborghini Aventador</h3>
+                <img src="img/lambo.jpg" alt="Lamborghini Aventador">
+                <button class="details-button" type="button" aria-expanded="false">
+                    Ver ficha
+                </button>
+                <div class="car-details">
+                    <div class="car-details-inner">
+                        <p>Un superdeportivo de motor V12 atmosférico. Las cifras varían según la versión; estos datos corresponden al Aventador Ultimae.</p>
+                        <ul>
+                            <li><strong>Potencia:</strong> 780 CV</li>
+                            <li><strong>0 a 100 km/h:</strong> 2,8 s</li>
+                            <li><strong>Velocidad máxima:</strong> 355 km/h</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="car-item">
+                <h3>Porsche 911 GT3</h3>
+                <img src="img/gt3.jpeg" alt="Porsche 911 GT3">
+                <button class="details-button" type="button" aria-expanded="false">
+                    Ver ficha
+                </button>
+                <div class="car-details">
+                    <div class="car-details-inner">
+                        <p>Un 911 centrado en la conducción en circuito, con motor bóxer atmosférico y aerodinámica de competición.</p>
+                        <ul>
+                            <li><strong>Potencia:</strong> 510 CV</li>
+                            <li><strong>0 a 100 km/h:</strong> 3,4 s</li>
+                            <li><strong>Velocidad máxima:</strong> 311 km/h</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.details-button').forEach((button) => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                const details = button.nextElementSibling;
+
+                button.setAttribute('aria-expanded', String(!isExpanded));
+                button.textContent = isExpanded ? 'Ver ficha' : 'Ocultar ficha';
+                details.classList.toggle('is-visible', !isExpanded);
+            });
+        });
+    </script>
+</body>
+</html>
